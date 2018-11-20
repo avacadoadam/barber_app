@@ -6,14 +6,15 @@ base domain
  */
 public enum API {
 
-    LogIn("/LogIn"), GetAppointments("Barber"), Admin("Admin");
-    private String type;
+    LogIn("/LogIn"),
+    Register("/CreateAccount");
+    private String Action;
 
     API(String type) {
-        this.type = type;
+        this.Action = type;
     }
 
-    public String getType() {
-        return type;
+    public String getAction() {
+        return Action;
     }
 }
