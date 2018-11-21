@@ -65,6 +65,10 @@ public class CustomerForm extends CustomController implements ControllerCallback
     }
 
     public void Fail(final String error) {
+
+        if (error.equals("Already Logged in")) {
+            Connect.getInstance().LogOut();
+        }
         Platform.runLater(new Runnable() {
             public void run() {
                 StopLoading();

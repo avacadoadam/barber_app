@@ -58,6 +58,10 @@ public class BarberForm extends CustomController implements ControllerCallback {
     }
 
     public void Fail(String error) {
+
+        if (error.equals("Already Logged in")) {
+            Connect.getInstance().LogOut();
+        }
         StopLoading();
         DisplayError(error);
     }

@@ -45,12 +45,13 @@ public class Connect {
                                 try {
                                     JSONObject json = httpResponse.getBody().getObject();
                                     if (json.getBoolean("success")) {
+                                        if (action == API.LogIn) LogInSuccess(json);
                                         callback.Succes(action);
                                     } else {
                                         callback.Fail(json.getString("error"));
                                     }
-                                }catch (Exception e){
-                                      callback.Fail("Failed Response");
+                                } catch (Exception e) {
+                                    callback.Fail("Failed Response");
                                 }
                             }
 
@@ -68,6 +69,19 @@ public class Connect {
         };
 
         new Thread(task).start();
+    }
+
+    public void LogOut() {
+        User.getInstance().Logout();
+        Future jsonResponse = Unirest.post(Connect.StringUrl + API.Logout.getAction()).asJsonAsync();
+    }
+
+    //Adds user data given from Login
+    private void LogInSuccess(JSONObject obj) {
+        User.getInstance().Logout();
+        User.CreateInstance(obj.getString("fname"), obj.getString("lname"),
+                obj.getString("email"), obj.getInt("id"), obj.getString("type"),
+                obj.getInt("rating"));
     }
 
 

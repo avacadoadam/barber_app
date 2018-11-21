@@ -8,8 +8,9 @@ import Backend.API;
  */
 public interface ControllerCallback {
 
-     void Succes(API action);
-     void Fail(String error);
+    void Succes(API action);
+
+    void Fail(String error);
 
 }
 

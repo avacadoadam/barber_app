@@ -41,7 +41,7 @@ public abstract class CustomController {
      *
      * @param error
      */
-     protected void DisplayError(String error) {
+    protected void DisplayError(String error) {
         this.response.setText(error);
     }
 
@@ -53,7 +53,7 @@ public abstract class CustomController {
         Loading.setText("Loading");
     }
 
-    protected void DisplaySucess(String success){
+    protected void DisplaySucess(String success) {
         response.setText(success);
     }
 

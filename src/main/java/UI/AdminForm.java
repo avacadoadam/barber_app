@@ -7,11 +7,11 @@ import javafx.scene.control.TextField;
 
 import java.util.HashMap;
 
-public class AdminForm extends CustomController implements ControllerCallback{
+public class AdminForm extends CustomController implements ControllerCallback {
 
     public TextField login_email;
     public TextField login_passwd;
-     private Type type = Type.Admin;
+    private Type type = Type.Admin;
 
     public void Login() {
         HashMap<String, Object> fields = new HashMap<String, Object>();
@@ -26,12 +26,16 @@ public class AdminForm extends CustomController implements ControllerCallback{
 
     public void Succes(API action) {
         StopLoading();
-     ChangeScene("adminpanel.fxml", "Admin Panel");
+        ChangeScene("adminpanel.fxml", "Admin Panel");
 
     }
 
     public void Fail(String error) {
         StopLoading();
         DisplayError(error);
+
+        if (error.equals("Already Logged in")) {
+            Connect.getInstance().LogOut();
+        }
     }
 }

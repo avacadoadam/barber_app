@@ -7,7 +7,14 @@ base domain
 public enum API {
 
     LogIn("/LogIn"),
-    Register("/CreateAccount");
+    Register("/CreateAccount"),
+    Logout("/LogOut"),
+    Admin("/Admin"),
+    BookAppointment("/BookAppointment"),
+    CreateAccount("/CreateAccount"),
+    GetAppointments("/GetAppointments");
+
+
     private String Action;
 
     API(String type) {
