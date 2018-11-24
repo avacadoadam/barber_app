@@ -49,6 +49,10 @@ public class User {
         return id;
     }
 
+    public int getRating() {
+        return rating;
+    }
+
     public Type getType() {
         return type;
     }
