@@ -1,4 +1,6 @@
-package Backend;
+package Dataset;
+
+import Backend.Type;
 
 public class User {
 

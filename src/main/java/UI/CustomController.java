@@ -42,7 +42,7 @@ public abstract class CustomController {
      * @param error
      */
     protected void DisplayError(String error) {
-        this.response.setText(error);
+        response.setText(error);
     }
 
     /**

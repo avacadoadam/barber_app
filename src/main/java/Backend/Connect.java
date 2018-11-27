@@ -1,5 +1,6 @@
 package Backend;
 
+import Dataset.User;
 import UI.ControllerCallback;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;

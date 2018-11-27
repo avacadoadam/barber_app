@@ -3,6 +3,7 @@ package UI;
 import Backend.API;
 import Backend.Connect;
 import Backend.Type;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
@@ -44,26 +45,35 @@ public class BarberForm extends CustomController implements ControllerCallback {
         StartLoading();
     }
 
-    public void Succes(API action) {
-        StopLoading();
-        switch (action) {
-            case LogIn:
-                ChangeScene("barberpanel.fxml", "Barber Panel");
-                break;
-            case Register:
-                DisplaySucess("You have create your account you may now log In");
-                break;
-        }
+    public void Succes(final API action) {
+
+        Platform.runLater(new Runnable() {
+            public void run() {
+                StopLoading();
+                switch (action) {
+                    case LogIn:
+                        ChangeScene("barberpanel.fxml", "Barber CustomPanel");
+                        break;
+                    case Register:
+                        DisplaySucess("You have create your account you may now log In");
+                        break;
+                }
+            }
+        });
 
     }
 
-    public void Fail(String error) {
+    public void Fail(final String error) {
+        Platform.runLater(new Runnable() {
+            public void run() {
+                if (error.equals("Already Logged in")) {
+                    Connect.getInstance().LogOut();
+                }
+                StopLoading();
+                DisplayError(error);
 
-        if (error.equals("Already Logged in")) {
-            Connect.getInstance().LogOut();
-        }
-        StopLoading();
-        DisplayError(error);
+            }
+        });
     }
 
 }

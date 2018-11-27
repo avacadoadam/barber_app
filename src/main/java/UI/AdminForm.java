@@ -3,6 +3,7 @@ package UI;
 import Backend.API;
 import Backend.Connect;
 import Backend.Type;
+import javafx.application.Platform;
 import javafx.scene.control.TextField;
 
 import java.util.HashMap;
@@ -25,17 +26,27 @@ public class AdminForm extends CustomController implements ControllerCallback {
 
 
     public void Succes(API action) {
-        StopLoading();
-        ChangeScene("adminpanel.fxml", "Admin Panel");
+        Platform.runLater(new Runnable() {
+            public void run() {
 
+                StopLoading();
+                ChangeScene("adminpanel.fxml", "Admin CustomPanel");
+
+            }
+        });
     }
 
-    public void Fail(String error) {
-        StopLoading();
-        DisplayError(error);
+    public void Fail(final String error) {
+        Platform.runLater(new Runnable() {
+            public void run() {
+                StopLoading();
+                DisplayError(error);
 
-        if (error.equals("Already Logged in")) {
-            Connect.getInstance().LogOut();
-        }
+                if (error.equals("Already Logged in")) {
+                    Connect.getInstance().LogOut();
+                }
+            }
+        });
+
     }
 }

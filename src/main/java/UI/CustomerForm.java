@@ -6,7 +6,6 @@ import Backend.Type;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
 import java.util.HashMap;
 
@@ -28,16 +27,15 @@ public class CustomerForm extends CustomController implements ControllerCallback
 
 
     public void Login() {
+        StartLoading();
         HashMap<String, Object> fields = new HashMap<String, Object>();
         fields.put("email", login_email.getText());
         fields.put("passwd", login_passwd.getText());
         fields.put("type", type.getType());
         Connect.getInstance().ConstructRequest(fields, API.LogIn, this);
-        StartLoading();
-
     }
 
-    public void Register(MouseEvent mouseEvent) {
+    public void Register() {
         StartLoading();
         HashMap<String, Object> fields = new HashMap<String, Object>();
         fields.put("email", reg_email.getText());
@@ -46,6 +44,7 @@ public class CustomerForm extends CustomController implements ControllerCallback
         fields.put("lname", reg_lname.getText());
         fields.put("type", type.getType());
         Connect.getInstance().ConstructRequest(fields, API.Register, this);
+
     }
 
     public void Succes(final API action) {
@@ -54,7 +53,7 @@ public class CustomerForm extends CustomController implements ControllerCallback
             public void run() {
                 switch (action) {
                     case LogIn:
-                        ChangeScene("customerpanel.fxml", "Customer Panel");
+                        ChangeScene("customerpanel.fxml", "Customer CustomPanel");
                         break;
                     case Register:
                         DisplaySucess("You have create your account you may now log In");
