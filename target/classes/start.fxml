@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1"
-      fx:controller="UI.StartController">
+      fx:controller="UI.Start">
     <children>
         <Button id="Barber" mnemonicParsing="false" prefHeight="25.0" prefWidth="605.0" text="Barber"
                 onMouseClicked="#BarberForm">

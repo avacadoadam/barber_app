@@ -1,10 +1,12 @@
-package UI;
+package Panels;
 
 
 import Backend.Appointments;
 import Backend.Connect;
+import Callback.GetAppointmentsCallback;
 import Dataset.Appointment;
 import Dataset.User;
+import UI.CustomController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 
 //A class to handle UI components that are shared between Barber admin and customer panels
-public class CustomPanel extends CustomController {
+abstract public class CustomPanel extends CustomController {
 
     protected final ObservableList<Appointment> data = FXCollections.observableArrayList();
     @FXML
@@ -29,9 +31,12 @@ public class CustomPanel extends CustomController {
     @FXML
     protected TableView my_appointments;
 
-    @FXML
-    protected void initialize() {
-        TableColumn CustomerName = new TableColumn("CustomerName");
+    /**
+     * Sets up Appointments table and columns
+     * Also Send request for appointments and loads then or display error message
+     */
+    protected void SetUpAppointments(){
+           TableColumn CustomerName = new TableColumn("CustomerName");
         CustomerName.setCellValueFactory(new PropertyValueFactory<Appointment, String>("CustomerName"));
 
         TableColumn Barbershop = new TableColumn("Barbershop");
@@ -54,17 +59,12 @@ public class CustomPanel extends CustomController {
             }
 
             public void Fail(String errorMessage) {
-                System.out.println(errorMessage);
+                DisplayError(errorMessage);
             }
         });
 
-
     }
 
-    protected void GetAppointments() {
-        HashMap<String, String> Fields = new HashMap<String, String>();
-        Fields.put("action", "GetMyAppointments");
-    }
 
     protected void LoadDetails() {
         User user = User.getInstance();
@@ -74,10 +74,6 @@ public class CustomPanel extends CustomController {
         details_rating.setText(Integer.toString(user.getRating()));
     }
 
-    protected void LoadAppointments(List<Appointment> appointments) {
-
-
-    }
 
 }
 

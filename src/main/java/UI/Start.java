@@ -2,7 +2,7 @@ package UI;
 
 import javafx.scene.input.MouseEvent;
 
-public class StartController extends CustomController {
+public class Start extends CustomController {
 
 
     public void AdminForm(MouseEvent mouseEvent) {

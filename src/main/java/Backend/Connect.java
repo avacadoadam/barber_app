@@ -2,8 +2,10 @@ package Backend;
 
 import Dataset.Appointment;
 import Dataset.User;
-import UI.ControllerCallback;
-import UI.GetAppointmentsCallback;
+import Dataset.ListBarber;
+import Callback.ControllerCallback;
+import Callback.GetAppointmentsCallback;
+import Callback.ListBarbersController;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
@@ -19,7 +21,7 @@ import java.util.concurrent.Future;
 public class Connect {
 
     private static Connect single_instance = null;
-    private static String StringUrl = "http://api/";
+    private static String StringUrl = "http://api/api";
 
     private Connect() {
     }
@@ -114,6 +116,57 @@ public class Connect {
                                 } else {
                                     callback.Fail(success.getString("error"));
                                 }
+                            }
+
+                            public void failed(UnirestException e) {
+                                callback.Fail("Failed to connect");
+                            }
+
+                            public void cancelled() {
+                                callback.Fail("Request was canceled");
+                            }
+                        });
+                return null;
+            }
+
+        };
+
+        new Thread(task).start();
+    }
+ public void GetBarbers(final HashMap<String, Object> Fields, final ListBarbersController callback) {
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() {
+                System.out.println("Thread Called1");
+                Future jsonResponse = Unirest.post(Connect.StringUrl + API.GetAppointments.getAction())
+                        .fields(Fields)
+                        .asJsonAsync(new Callback<JsonNode>() {
+                            public void completed(HttpResponse<JsonNode> httpResponse) {
+                                JsonNode jsonNode = httpResponse.getBody();
+                                JSONObject success = null;
+                                JSONArray arr = null;
+                                try {
+                                    success = (JSONObject) jsonNode.getArray().get(0);
+                                } catch (Exception e) {
+                                    success = httpResponse.getBody().getObject();
+                                    e.printStackTrace();
+                                }
+                                if (success.getBoolean("success")) {
+                                    arr = httpResponse.getBody().getArray();
+                                    ListBarber[] barbers = new ListBarber[arr.length() - 1];
+                                    for (int i = 1; i < arr.length(); i++) {
+                                        JSONObject a = arr.getJSONObject(i);
+                                        try {
+                                            barbers[i - 1] = new ListBarber(a.getString("BarberName"),
+                                                    a.getInt("BarberID"),a.getInt("rating"));
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                    callback.Success(barbers);
+                                } else {
+                                    callback.Fail(success.getString("error"));
+                                }
                                 System.out.println(httpResponse.getBody());
                             }
 
@@ -131,9 +184,8 @@ public class Connect {
         };
 
         new Thread(task).start();
-
-
     }
+
 
     public void LogOut() {
         User.getInstance().Logout();
