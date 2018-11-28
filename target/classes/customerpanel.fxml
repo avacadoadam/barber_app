@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.TableView?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Customerpanel">
    <children>
       <Label alignment="CENTER" layoutY="40.0" prefHeight="24.0" prefWidth="252.0" text="My Appointments">
@@ -15,7 +16,7 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <ListView fx:id="my_appointments" layoutX="14.0" layoutY="69.0" prefHeight="200.0" prefWidth="200.0" />
+      <TableView fx:id="my_appointments" layoutX="14.0" layoutY="69.0" prefHeight="200.0" prefWidth="200.0" />
       <Label alignment="CENTER" layoutX="32.0" layoutY="381.0" prefHeight="16.0" prefWidth="123.0" text="Details" />
       <Label fx:id="details_name" layoutX="32.0" layoutY="418.0" text="name" />
       <Label fx:id="details_email" layoutX="82.0" layoutY="418.0" text="email" />
@@ -25,7 +26,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="357.0" layoutY="52.0" prefHeight="24.0" prefWidth="252.0" text="Set APpointment">
+      <Label alignment="CENTER" layoutX="357.0" layoutY="52.0" prefHeight="24.0" prefWidth="252.0" text="Set Appointment">
          <font>
             <Font size="19.0" />
          </font>

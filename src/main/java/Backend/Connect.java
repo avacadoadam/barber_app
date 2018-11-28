@@ -104,12 +104,12 @@ public class Connect {
                                         JSONObject a = arr.getJSONObject(i);
                                         System.out.println(arr.getJSONObject(i).get("id"));
                                         try {
-                                            appointments[i - 1] = new Appointment(a.getInt("id"),  a.getString("Barbershop")
-                                                    ,  a.getString("Time"),  a.getString("CustomerName"), a.getString("BarberName"),  a.getString("Date"));
-                                        }catch (Exception e){
+                                            appointments[i - 1] = new Appointment(a.getInt("id"), a.getString("Barbershop")
+                                                    , a.getString("Time"), a.getString("CustomerName"), a.getString("BarberName"), a.getString("Date"));
+                                        } catch (Exception e) {
                                             e.printStackTrace();
                                         }
-                                        }
+                                    }
                                     callback.Success(appointments);
                                 } else {
                                     callback.Fail(success.getString("error"));
