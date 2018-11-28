@@ -15,8 +15,8 @@
         <TextField fx:id="reg_passwd" layoutX="85.0" layoutY="164.0" promptText="Password"/>
         <TextField fx:id="reg_fname" layoutX="85.0" layoutY="200.0" promptText="first name"/>
         <TextField fx:id="reg_lname" layoutX="85.0" layoutY="238.0" promptText="second name"/>
-        <TextField fx:id="login_email" layoutX="389.0" layoutY="127.0" promptText="Email"/>
-        <TextField fx:id="login_passwd" layoutX="389.0" layoutY="176.0" promptText="Password"/>
+        <TextField fx:id="login_email" layoutX="389.0" layoutY="127.0" promptText="Email" text="mwitte@mac.com"/>
+        <TextField fx:id="login_passwd" layoutX="389.0" layoutY="176.0" promptText="Password" text="Password1!"/>
         <Label layoutX="85.0" layoutY="96.0" prefHeight="17.0" prefWidth="149.0" text="Register"/>
         <Label layoutX="389.0" layoutY="96.0" prefHeight="17.0" prefWidth="149.0" text="Log In"/>
         <Label alignment="CENTER" layoutX="84.0" layoutY="37.0" prefHeight="39.0" prefWidth="461.0" text="Customer">
