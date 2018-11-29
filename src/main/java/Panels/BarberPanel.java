@@ -9,7 +9,6 @@ public class BarberPanel extends CustomPanel {
         @FXML
     protected void initialize() {
             SetUpAppointments();
-
         }
 
 

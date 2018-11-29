@@ -1,6 +1,10 @@
 package Panels;
 
+import Backend.API;
 import Backend.Connect;
+import Backend.ResponseFactory.AppointmentResponse;
+import Backend.ResponseFactory.GetComplaintsResponse;
+import Backend.ResponseFactory.UnApprovedBarbers;
 import Callback.ComplaintsCallback;
 import Callback.GetAppointmentsCallback;
 import Callback.UnapprovedBarbers;
@@ -41,7 +45,6 @@ public class AdminPanel extends CustomController {
         public void Success(String[] complaints) {
             Complaintslist.addAll(complaints);
         }
-
         public void fail(String error) {
             DisplayError(error);
         }
@@ -59,7 +62,6 @@ public class AdminPanel extends CustomController {
 
     @FXML
     private void initialize() {
-        System.out.println("Init called");
         LoadDetails();
         Complaints.setItems(Complaintslist);
         waiting.setItems(UnApprovedBarbers);
@@ -70,16 +72,15 @@ public class AdminPanel extends CustomController {
     }
 
     private void GetBarbersWaitngApproval() {
-        Connect.getInstance().GetUnApprovedBarbers(Unapprovedbarberscallback);
-        //Send Reqeuest and make Controller
+        Connect.getInstance().ConstructRequest(null, API.Admin, new UnApprovedBarbers(Unapprovedbarberscallback));
     }
 
     private void GetComplaints() {
         HashMap<String, Object> field = new HashMap<String, Object>();
         field.put("action", "GetBarberComplaints");
-        Connect.getInstance().GetComplaints(field, callback);
+        Connect.getInstance().ConstructRequest(field, API.Admin, new GetComplaintsResponse(callback));
         field.put("action", "GetCustomerComplaints");
-        Connect.getInstance().GetComplaints(field, callback);
+        Connect.getInstance().ConstructRequest(field, API.Admin, new GetComplaintsResponse(callback));
     }
 
     private void GetAllAppoitments() {
@@ -96,8 +97,9 @@ public class AdminPanel extends CustomController {
         Date.setCellValueFactory(new PropertyValueFactory<Appointment, String>("Date"));
 
         my_appointments.getColumns().addAll(CustomerName, Barbershop, Time, Date);
-
-        Connect.getInstance().AdminGetAllAppointments(new GetAppointmentsCallback() {
+        HashMap<String, Object> field = new HashMap<String, Object>();
+        field.put("action", "GetAppointments");
+        Connect.getInstance().ConstructRequest(field, API.Admin, new AppointmentResponse(new GetAppointmentsCallback() {
             public void Success(Appointment[] appointment) {
                 appointments.addAll(appointment);
             }
@@ -105,10 +107,11 @@ public class AdminPanel extends CustomController {
             public void Fail(String errorMessage) {
                 DisplayError(errorMessage);
             }
-        });
+        }));
+
     }
 
-    protected void LoadDetails() {
+    private void LoadDetails() {
         User user = User.getInstance();
         System.out.println(user.getFname());
         details_name.setText(user.getFname() + " " + user.getLname());

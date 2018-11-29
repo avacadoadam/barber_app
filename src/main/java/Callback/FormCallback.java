@@ -6,7 +6,7 @@ import Backend.API;
 /**
  * A interface so that a reponse can be given back to the UI
  */
-public interface ControllerCallback {
+public interface FormCallback {
 
     void Succes(API action);
 

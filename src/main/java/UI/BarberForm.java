@@ -1,7 +1,9 @@
 package UI;
 
 import Backend.API;
-import Callback.ControllerCallback;
+import Backend.ResponseFactory.LogInResponse;
+import Backend.ResponseFactory.RegisterResponse;
+import Callback.FormCallback;
 import Backend.Connect;
 import Backend.Type;
 import javafx.application.Platform;
@@ -10,7 +12,7 @@ import javafx.scene.control.TextField;
 
 import java.util.HashMap;
 
-public class BarberForm extends CustomController implements ControllerCallback {
+public class BarberForm extends CustomController implements FormCallback {
 
     @FXML
     public TextField reg_email;
@@ -33,7 +35,7 @@ public class BarberForm extends CustomController implements ControllerCallback {
         fields.put("fname", reg_fname.getText());
         fields.put("lname", reg_lname.getText());
         fields.put("type", type.getType());
-        Connect.getInstance().ConstructRequest(fields, API.Register, this);
+        Connect.getInstance().ConstructRequest(fields, API.Register, new LogInResponse(this));
         StartLoading();
     }
 
@@ -42,7 +44,7 @@ public class BarberForm extends CustomController implements ControllerCallback {
         fields.put("email", login_email.getText());
         fields.put("passwd", login_passwd.getText());
         fields.put("type", type.getType());
-        Connect.getInstance().ConstructRequest(fields, API.LogIn, this);
+        Connect.getInstance().ConstructRequest(fields, API.LogIn, new RegisterResponse(this));
         StartLoading();
     }
 

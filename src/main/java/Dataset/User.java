@@ -33,7 +33,6 @@ public class User {
     }
 
     public void Logout() {
-        Connect.getInstance().LogOut();
         User.instance = null;
     }
 

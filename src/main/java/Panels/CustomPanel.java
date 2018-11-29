@@ -1,8 +1,10 @@
 package Panels;
 
 
+import Backend.API;
 import Backend.Appointments;
 import Backend.Connect;
+import Backend.ResponseFactory.AppointmentResponse;
 import Callback.GetAppointmentsCallback;
 import Dataset.Appointment;
 import Dataset.User;
@@ -10,7 +12,6 @@ import UI.CustomController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -30,12 +31,13 @@ abstract public class CustomPanel extends CustomController {
     protected Label details_rating;
     @FXML
     protected TableView my_appointments;
+
     /**
      * Sets up Appointments table and columns
      * Also Send request for appointments and loads then or display error message
      */
-    protected void SetUpAppointments(){
-           TableColumn CustomerName = new TableColumn("CustomerName");
+    protected void SetUpAppointments() {
+        TableColumn CustomerName = new TableColumn("CustomerName");
         CustomerName.setCellValueFactory(new PropertyValueFactory<Appointment, String>("CustomerName"));
 
         TableColumn Barbershop = new TableColumn("Barbershop");
@@ -52,7 +54,8 @@ abstract public class CustomPanel extends CustomController {
         LoadDetails();
         HashMap<String, Object> fields = new HashMap<String, Object>();
         fields.put("action", Appointments.GetMyAppointment.getAction());
-        Connect.getInstance().GetAppointments(fields, new GetAppointmentsCallback() {
+
+        Connect.getInstance().ConstructRequest(fields, API.GetAppointments, new AppointmentResponse(new GetAppointmentsCallback() {
             public void Success(Appointment[] appointments) {
                 CustomPanel.this.appointments.addAll(appointments);
             }
@@ -60,7 +63,8 @@ abstract public class CustomPanel extends CustomController {
             public void Fail(String errorMessage) {
                 DisplayError(errorMessage);
             }
-        });
+        }));
+
 
     }
 
@@ -72,10 +76,11 @@ abstract public class CustomPanel extends CustomController {
         details_email.setText(user.getEmail());
         details_rating.setText(Integer.toString(user.getRating()));
     }
+
     @FXML
-    protected void Logout(){
-        User.getInstance().Logout();
-        ChangeScene("start.fxml","Select Type");
+    protected void Logout() {
+        Connect.getInstance().LogOut();
+        ChangeScene("start.fxml", "Select Type");
     }
 
 

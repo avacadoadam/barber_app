@@ -2,7 +2,9 @@ package Panels;
 
 import Backend.API;
 import Backend.Connect;
-import Callback.ControllerCallback;
+import Backend.ResponseFactory.GenericResponse;
+import Backend.ResponseFactory.GetBarbersResponse;
+import Callback.FormCallback;
 import Callback.ListBarbersController;
 import Dataset.ListBarber;
 import javafx.application.Platform;
@@ -42,7 +44,7 @@ public class Customerpanel extends CustomPanel {
         set_appointment_barberList.setItems(Barbers);
         HashMap<String, Object> field = new HashMap<String, Object>();
         field.put("action", "ListBarbers");
-        Connect.getInstance().GetBarbers(field, new ListBarbersController() {
+        Connect.getInstance().ConstructRequest(field, API.GetAppointments, new GetBarbersResponse(new ListBarbersController() {
             public void Success(ListBarber[] barbers) {
                 for (ListBarber barber : barbers) {
                     Barbers.add(barber.getBarberName());
@@ -53,7 +55,8 @@ public class Customerpanel extends CustomPanel {
             public void Fail(String error) {
                 DisplayError(error);
             }
-        });
+        }));
+
     }
 
     @FXML //Set 1
@@ -92,11 +95,10 @@ public class Customerpanel extends CustomPanel {
         field.put("date", set_appointment_date.getValue());
         String m = set_appointment_minute.getValue().toString();
         String h = set_appointment_hour.getValue().toString();
-        if(m.length() == 1) m = "0"+m;
-        if(h.length() == 1) h = "0"+h;
-        field.put("time", h + ":" + m+ ":00");
-        System.out.println(h + ":" + m+ ":00");
-        Connect.getInstance().ConstructRequest(field, API.BookAppointment, new ControllerCallback() {
+        if (m.length() == 1) m = "0" + m;
+        if (h.length() == 1) h = "0" + h;
+        field.put("time", h + ":" + m + ":00");
+        Connect.getInstance().ConstructRequest(field, API.BookAppointment, new GenericResponse(new FormCallback() {
             public void Succes(API action) {
                 Platform.runLater(new Runnable() {
                     public void run() {
@@ -106,6 +108,7 @@ public class Customerpanel extends CustomPanel {
                     }
                 });
             }
+
             public void Fail(final String error) {
                 Platform.runLater(new Runnable() {
                     public void run() {
@@ -113,6 +116,6 @@ public class Customerpanel extends CustomPanel {
                     }
                 });
             }
-        });
+        }));
     }
 }
