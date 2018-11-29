@@ -1,5 +1,6 @@
 package Dataset;
 
+import Backend.Connect;
 import Backend.Type;
 
 public class User {
@@ -32,6 +33,7 @@ public class User {
     }
 
     public void Logout() {
+        Connect.getInstance().LogOut();
         User.instance = null;
     }
 

@@ -1,16 +1,15 @@
 package Panels;
 
+import Backend.API;
 import Backend.Connect;
+import Callback.ControllerCallback;
 import Callback.ListBarbersController;
 import Dataset.ListBarber;
-import Panels.CustomPanel;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Spinner;
+import javafx.scene.control.*;
 
 import java.util.HashMap;
 
@@ -18,14 +17,18 @@ public class Customerpanel extends CustomPanel {
 
 
     protected final ObservableList<String> Barbers = FXCollections.observableArrayList();
+    HashMap<String, Integer> barbersID = new HashMap<String, Integer>();
 
     @FXML
     ComboBox<String> set_appointment_barberList;
 
-    HashMap<String, Integer> barbersID = new HashMap<String, Integer>();
+    @FXML
+    Label Hour_label, Minute_Label;
 
     @FXML
-    Spinner set_appointment_time;
+    Spinner set_appointment_minute;
+    @FXML
+    Spinner set_appointment_hour;
 
     @FXML
     DatePicker set_appointment_date;
@@ -46,33 +49,39 @@ public class Customerpanel extends CustomPanel {
                     barbersID.put(barber.getBarberName(), barber.getBarberID());
                 }
             }
+
             public void Fail(String error) {
                 DisplayError(error);
             }
         });
-
     }
 
     @FXML //Set 1
     public void barberlistChange() {
         if (!set_appointment_barberList.getValue().equals("Select A barber")) {
-            set_appointment_time.setVisible(true);
+            set_appointment_hour.setVisible(true);
+            set_appointment_minute.setVisible(true);
+            Hour_label.setVisible(true);
+            Minute_Label.setVisible(true);
+            set_appointment_date.setVisible(true);
         } else {
             setAppointment.setDisable(true);
-            set_appointment_time.setVisible(false);
+            set_appointment_hour.setVisible(false);
+            set_appointment_minute.setVisible(false);
             set_appointment_date.setVisible(false);
+            Hour_label.setVisible(false);
+            Minute_Label.setVisible(false);
         }
     }
 
     @FXML //Step 2
     public void timeChange() {
-        System.out.println(set_appointment_time.getValue());
-        if (set_appointment_time.getValue() != null) {
-            set_appointment_date.setVisible(true);
-        } else {
+        if (set_appointment_date.getValue() != null) {
             setAppointment.setDisable(false);
-            set_appointment_date.setVisible(false);
+        } else {
+            setAppointment.setDisable(true);
         }
+
     }
 
     //Step 3
@@ -81,9 +90,29 @@ public class Customerpanel extends CustomPanel {
         field.put("barbershop", 1);
         field.put("barber", set_appointment_barberList.getValue());
         field.put("date", set_appointment_date.getValue());
-        field.put("time", set_appointment_time.getValue());
-
-        //Connection book appoitment
-        //Send request validate input
+        String m = set_appointment_minute.getValue().toString();
+        String h = set_appointment_hour.getValue().toString();
+        if(m.length() == 1) m = "0"+m;
+        if(h.length() == 1) h = "0"+h;
+        field.put("time", h + ":" + m+ ":00");
+        System.out.println(h + ":" + m+ ":00");
+        Connect.getInstance().ConstructRequest(field, API.BookAppointment, new ControllerCallback() {
+            public void Succes(API action) {
+                Platform.runLater(new Runnable() {
+                    public void run() {
+                        DisplaySucess("Success Book Appointment");
+                        appointments.clear();
+                        SetUpAppointments();
+                    }
+                });
+            }
+            public void Fail(final String error) {
+                Platform.runLater(new Runnable() {
+                    public void run() {
+                        DisplayError(error);
+                    }
+                });
+            }
+        });
     }
 }

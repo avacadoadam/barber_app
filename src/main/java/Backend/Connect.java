@@ -187,12 +187,13 @@ public class Connect {
     }
 
 
+
+
     public void LogOut() {
-        User.getInstance().Logout();
         Future jsonResponse = Unirest.post(Connect.StringUrl + API.Logout.getAction()).asJsonAsync();
     }
 
-    //Adds user data given from Login
+    //Adds user appointments given from Login
     private void LogInSuccess(JSONObject obj) {
         User.CreateInstance(obj.getString("lname"), obj.getString("fname"),
                 obj.getString("email"), obj.getInt("id"), obj.getString("type"),

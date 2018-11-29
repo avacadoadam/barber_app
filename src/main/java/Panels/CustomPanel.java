@@ -10,18 +10,18 @@ import UI.CustomController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.HashMap;
-import java.util.List;
 
 //A class to handle UI components that are shared between Barber admin and customer panels
 abstract public class CustomPanel extends CustomController {
 
-    protected final ObservableList<Appointment> data = FXCollections.observableArrayList();
+    protected final ObservableList<Appointment> appointments = FXCollections.observableArrayList();
     @FXML
     protected Label details_name;
     @FXML
@@ -30,7 +30,6 @@ abstract public class CustomPanel extends CustomController {
     protected Label details_rating;
     @FXML
     protected TableView my_appointments;
-
     /**
      * Sets up Appointments table and columns
      * Also Send request for appointments and loads then or display error message
@@ -49,13 +48,13 @@ abstract public class CustomPanel extends CustomController {
         Date.setCellValueFactory(new PropertyValueFactory<Appointment, String>("Date"));
 
         my_appointments.getColumns().addAll(CustomerName, Barbershop, Time, Date);
-        my_appointments.setItems(data);
+        my_appointments.setItems(appointments);
         LoadDetails();
         HashMap<String, Object> fields = new HashMap<String, Object>();
         fields.put("action", Appointments.GetMyAppointment.getAction());
         Connect.getInstance().GetAppointments(fields, new GetAppointmentsCallback() {
             public void Success(Appointment[] appointments) {
-                data.addAll(appointments);
+                CustomPanel.this.appointments.addAll(appointments);
             }
 
             public void Fail(String errorMessage) {
@@ -72,6 +71,11 @@ abstract public class CustomPanel extends CustomController {
         details_name.setText(user.getFname() + " " + user.getLname());
         details_email.setText(user.getEmail());
         details_rating.setText(Integer.toString(user.getRating()));
+    }
+    @FXML
+    protected void Logout(){
+        User.getInstance().Logout();
+        ChangeScene("start.fxml","Select Type");
     }
 
 

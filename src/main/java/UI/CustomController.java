@@ -27,7 +27,7 @@ public abstract class CustomController {
     protected void ChangeScene(String resource, String title) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("../" + resource));
-            Scene scene = new Scene(root, 600, 450);
+            Scene scene = new Scene(root, 800, 1200);
             stage.setTitle(title);
             stage.setScene(scene);
             stage.show();
