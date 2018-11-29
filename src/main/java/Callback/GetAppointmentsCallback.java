@@ -4,7 +4,7 @@ import Dataset.Appointment;
 
 public interface GetAppointmentsCallback {
 
-    void Success(Appointment[] appointments);
+    void Success(Appointment[] appointment);
     void Fail(String errorMessage);
 
 }

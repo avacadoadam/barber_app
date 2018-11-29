@@ -11,8 +11,8 @@
         <Button layoutX="386.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#Login" prefHeight="25.0"
                 prefWidth="149.0" text="Log In"/>
 
-        <TextField fx:id="login_email" layoutX="389.0" layoutY="127.0" promptText="Email"/>
-        <TextField fx:id="login_passwd" layoutX="389.0" layoutY="176.0" promptText="Password"/>
+        <TextField fx:id="login_email" layoutX="389.0" layoutY="127.0" promptText="Email" text="admin@barber.com"/>
+        <TextField fx:id="login_passwd" layoutX="389.0" layoutY="176.0" promptText="Password" text="Password1!"/>
         <Label layoutX="389.0" layoutY="96.0" prefHeight="17.0" prefWidth="149.0" text="Log In"/>
         <Label alignment="CENTER" layoutX="84.0" layoutY="37.0" prefHeight="39.0" prefWidth="461.0" text="Admin">
             <font>
