@@ -5,7 +5,7 @@
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="445.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/8.0.121"
-            fx:controller="UI.AdminForm">
+            fx:controller="UI.AdminForm" stylesheets="AdminStyle.css">
     <children>
 
         <Button layoutX="386.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#Login" prefHeight="25.0"
