@@ -11,11 +11,12 @@ import javafx.concurrent.Task;
 
 import java.util.HashMap;
 import java.util.concurrent.Future;
-
+// A class to handle the the request made to the server This is class is modular
+//The StringUrl should be change depending on the location of the API
 public class Connect {
 
     private static Connect single_instance = null;
-    private static String StringUrl = "http://api/api";
+    private static String StringUrl = "http://localhost/PHP/";
 
     private Connect() {
     }

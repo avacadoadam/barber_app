@@ -1,5 +1,5 @@
 package Backend;
-
+//Types of users
 public enum Type {
     Customer("Customer"), Barber("Barber"), Admin("Admin");
     private String type;
