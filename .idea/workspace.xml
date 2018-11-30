@@ -5,17 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e549125-62db-4692-ae7d-cf8918560d58" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Connect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/ResponseFactory/GenericResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/ResponseFactory/GenericResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/ResponseFactory/LogInResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/ResponseFactory/LogInResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/ResponseFactory/RegisterResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/ResponseFactory/RegisterResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/ResponseFactory/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/ResponseFactory/Response.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Callback/ComplaintsCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Callback/ComplaintsCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Callback/GetAppointmentsCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Callback/GetAppointmentsCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Callback/ListBarbersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Callback/ListBarbersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Callback/UnapprovedBarbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Callback/UnapprovedBarbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dataset/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dataset/Appointment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dataset/ListBarber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dataset/ListBarber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Backend/Connect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Backend/Connect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Panels/AdminPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Panels/AdminPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Panels/AdminPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Panels/AdminPanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Panels/AdminPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Panels/AdminPanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Panels/AdminPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Panels/AdminPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/UI/CustomerCell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dataset/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dataset/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Panels/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Panels/AdminPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Panels/BarberPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Panels/BarberPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/AdminForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI/BarberForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/BarberForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI/CustomerForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/CustomerForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AdminStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AdminStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/BarberStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/BarberStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/CustomerStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CustomerStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adminform.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminform.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adminpanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminpanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/barberform.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/barberform.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/barberpanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/barberpanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/customerform.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/customerform.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/customerpanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/customerpanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/start.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,13 +81,13 @@
         <counts>
           <entry key="class" value="2" />
           <entry key="fxml" value="7" />
-          <entry key="java" value="126" />
+          <entry key="java" value="127" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="126" />
+          <entry key="JAVA" value="127" />
           <entry key="XML" value="7" />
         </counts>
       </usages-collector>
@@ -78,10 +96,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Panels/AdminPanel.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Backend/Connect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+            <state relative-caret-position="251">
+              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,9 +173,9 @@
         <option value="$PROJECT_DIR$/src/main/java/Panels/AdminPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/Backend/ResponseFactory/Response.java" />
         <option value="$PROJECT_DIR$/src/main/java/Backend/API.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Backend/Connect.java" />
         <option value="$PROJECT_DIR$/src/main/java/Backend/Type.java" />
         <option value="$PROJECT_DIR$/src/main/java/Dataset/ListBarber.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Backend/Connect.java" />
       </list>
     </option>
   </component>
@@ -291,7 +312,7 @@
     <property name="SearchEverywhereHistoryKey" value="Json&#9;PSI&#9;JAVA://com.mashape.unirest.http.JsonNode" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543594394717" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543594548246" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -406,18 +427,17 @@
       <workItem from="1542798325442" duration="6463000" />
       <workItem from="1542891023388" duration="2748000" />
       <workItem from="1543582197702" duration="176000" />
-      <workItem from="1543582502743" duration="3092000" />
+      <workItem from="1543582502743" duration="3390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15949000" />
+    <option name="totallyTimeSpent" value="16247000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28791377" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28791377" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -428,7 +448,7 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.32912722" />
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="3" />
-      <window_info anchor="bottom" id="Run" order="4" visible="true" weight="0.3764535" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.3764535" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.35363248" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -829,16 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Backend/Connect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Backend/Type.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -876,8 +886,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Panels/AdminPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
+        <state relative-caret-position="184">
           <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Backend/Connect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

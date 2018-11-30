@@ -1,6 +1,5 @@
 package Dataset;
 
-import Backend.Connect;
 import Backend.Type;
 
 public class User {
@@ -9,6 +8,7 @@ public class User {
     private String lname, fname, email;
     private int id, rating;
     private Type type;
+
     private User(String lname, String fname, String email, int id, Type type, int rating) {
         this.lname = lname;
         this.fname = fname;

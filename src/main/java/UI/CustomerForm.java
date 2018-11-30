@@ -1,11 +1,11 @@
 package UI;
 
 import Backend.API;
+import Backend.Connect;
 import Backend.ResponseFactory.LogInResponse;
 import Backend.ResponseFactory.RegisterResponse;
-import Callback.FormCallback;
-import Backend.Connect;
 import Backend.Type;
+import Callback.FormCallback;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

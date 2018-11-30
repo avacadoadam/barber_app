@@ -11,9 +11,9 @@ public class GenericResponse implements Response {
     }
 
     public void process(JsonNode httpResponse) throws Exception {
-        if(httpResponse.getObject().getBoolean("success")){
+        if (httpResponse.getObject().getBoolean("success")) {
             callback.Succes(null);
-        }else{
+        } else {
             callback.Fail(httpResponse.getObject().getString("error"));
         }
     }

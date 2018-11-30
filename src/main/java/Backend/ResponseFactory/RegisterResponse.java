@@ -4,7 +4,7 @@ import Backend.API;
 import Callback.FormCallback;
 import com.mashape.unirest.http.JsonNode;
 
-public class RegisterResponse implements Response{
+public class RegisterResponse implements Response {
 
     private FormCallback callback;
 
@@ -12,15 +12,15 @@ public class RegisterResponse implements Response{
         this.callback = callback;
     }
 
-    public void process(JsonNode httpResponse)  throws Exception{
-        if(httpResponse.getObject().getBoolean("success")){
+    public void process(JsonNode httpResponse) throws Exception {
+        if (httpResponse.getObject().getBoolean("success")) {
             callback.Succes(API.Register);
-        }else{
+        } else {
             callback.Fail("Error Handling Response");
         }
     }
 
     public void Fail(String error) {
-            callback.Fail(error);
+        callback.Fail(error);
     }
 }

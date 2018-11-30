@@ -9,16 +9,16 @@ import javafx.beans.property.SimpleStringProperty;
 public class Appointment {
 
 
-    private SimpleStringProperty Barbershop,Time,CustomerName,BarberName,Date;
+    private SimpleStringProperty Barbershop, Time, CustomerName, BarberName, Date;
     private SimpleStringProperty AppointmentID;
 
     public Appointment(int appointmentID, String barbershop, String time, String customerName, String barberName, String date) {
-        AppointmentID = new SimpleStringProperty (Integer.toString(appointmentID));
-        Barbershop = new SimpleStringProperty (barbershop);
-        Time = new SimpleStringProperty (time);
-        CustomerName = new SimpleStringProperty (customerName);
-        BarberName = new SimpleStringProperty (barberName);
-        Date = new SimpleStringProperty (date);
+        AppointmentID = new SimpleStringProperty(Integer.toString(appointmentID));
+        Barbershop = new SimpleStringProperty(barbershop);
+        Time = new SimpleStringProperty(time);
+        CustomerName = new SimpleStringProperty(customerName);
+        BarberName = new SimpleStringProperty(barberName);
+        Date = new SimpleStringProperty(date);
     }
 
     public String getBarbershop() {

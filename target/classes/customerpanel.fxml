@@ -10,46 +10,57 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Panels.Customerpanel" stylesheets="CustomerStyle.css">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="493.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="Panels.Customerpanel" stylesheets="CustomerStyle.css">
     <children>
         <Label alignment="CENTER" layoutY="40.0" prefHeight="24.0" prefWidth="252.0" text="My Appointments">
             <font>
-                <Font size="19.0" />
+                <Font size="19.0"/>
             </font>
         </Label>
-        <TableView fx:id="my_appointments" layoutX="14.0" layoutY="69.0" prefHeight="200.0" prefWidth="200.0" />
-        <Label alignment="CENTER" layoutX="19.0" layoutY="318.0" prefHeight="16.0" prefWidth="123.0" text="Details" />
-        <Label fx:id="details_name" layoutX="11.0" layoutY="391.0" prefHeight="17.0" prefWidth="107.0" text="name" />
-        <Label fx:id="details_email" layoutX="16.0" layoutY="353.0" prefHeight="17.0" prefWidth="123.0" text="email" />
-        <Label fx:id="details_rating" layoutX="12.0" layoutY="424.0" prefHeight="17.0" prefWidth="91.0" text="Rating" />
-        <Label alignment="CENTER" layoutX="-2.0" layoutY="14.0" prefHeight="16.0" prefWidth="678.0" text="Customer Panel">
+        <TableView fx:id="my_appointments" layoutX="14.0" layoutY="69.0" prefHeight="200.0" prefWidth="200.0"/>
+        <Label alignment="CENTER" layoutX="19.0" layoutY="318.0" prefHeight="16.0" prefWidth="123.0" text="Details"/>
+        <Label fx:id="details_name" layoutX="11.0" layoutY="391.0" prefHeight="17.0" prefWidth="107.0" text="name"/>
+        <Label fx:id="details_email" layoutX="16.0" layoutY="353.0" prefHeight="17.0" prefWidth="123.0" text="email"/>
+        <Label fx:id="details_rating" layoutX="12.0" layoutY="424.0" prefHeight="17.0" prefWidth="91.0" text="Rating"/>
+        <Label alignment="CENTER" layoutX="-2.0" layoutY="14.0" prefHeight="16.0" prefWidth="678.0"
+               text="Customer Panel">
             <font>
-                <Font size="22.0" />
+                <Font size="22.0"/>
             </font>
         </Label>
-        <Label alignment="CENTER" layoutX="357.0" layoutY="52.0" prefHeight="24.0" prefWidth="252.0" text="Set Appointment">
+        <Label alignment="CENTER" layoutX="357.0" layoutY="52.0" prefHeight="24.0" prefWidth="252.0"
+               text="Set Appointment">
             <font>
-                <Font size="19.0" />
+                <Font size="19.0"/>
             </font>
         </Label>
-        <ComboBox fx:id="set_appointment_barberList" layoutX="398.0" layoutY="94.0" onAction="#barberlistChange" />
-        <DatePicker fx:id="set_appointment_date" layoutX="396.0" layoutY="188.0" onAction="#timeChange" visible="false" />
-        <Spinner fx:id="set_appointment_hour" layoutX="403.0" layoutY="144.0" onMouseClicked="#timeChange" prefHeight="25.0" prefWidth="91.0" visible="false">
+        <ComboBox fx:id="set_appointment_barberList" layoutX="398.0" layoutY="94.0" onAction="#barberlistChange"/>
+        <DatePicker fx:id="set_appointment_date" layoutX="396.0" layoutY="188.0" onAction="#timeChange"
+                    visible="false"/>
+        <Spinner fx:id="set_appointment_hour" layoutX="403.0" layoutY="144.0" onMouseClicked="#timeChange"
+                 prefHeight="25.0" prefWidth="91.0" visible="false">
             <valueFactory>
-                <SpinnerValueFactory.IntegerSpinnerValueFactory max="18" min="7" />
+                <SpinnerValueFactory.IntegerSpinnerValueFactory max="18" min="7"/>
             </valueFactory>
         </Spinner>
-        <Spinner fx:id="set_appointment_minute" layoutX="512.0" layoutY="144.0" onMouseClicked="#timeChange" prefHeight="25.0" prefWidth="91.0" visible="false">
+        <Spinner fx:id="set_appointment_minute" layoutX="512.0" layoutY="144.0" onMouseClicked="#timeChange"
+                 prefHeight="25.0" prefWidth="91.0" visible="false">
             <valueFactory>
-                <SpinnerValueFactory.IntegerSpinnerValueFactory max="60" min="0" />
+                <SpinnerValueFactory.IntegerSpinnerValueFactory max="60" min="0"/>
             </valueFactory>
         </Spinner>
-        <Button fx:id="setAppointment" disable="true" layoutX="398.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#SetAppointment" text="Set Appointment" />
-        <Label fx:id="Loading" layoutX="14.0" layoutY="391.0" visible="false" />
-        <Label fx:id="response" layoutX="183.0" layoutY="433.0" prefHeight="39.0" prefWidth="308.0" />
+        <Button fx:id="setAppointment" disable="true" layoutX="398.0" layoutY="234.0" mnemonicParsing="false"
+                onMouseClicked="#SetAppointment" text="Set Appointment"/>
+        <Label fx:id="Loading" layoutX="14.0" layoutY="391.0" visible="false"/>
+        <Label fx:id="response" layoutX="183.0" layoutY="433.0" prefHeight="39.0" prefWidth="308.0"/>
 
-        <Label fx:id="Hour_label" layoutX="406.0" layoutY="119.0" prefHeight="17.0" prefWidth="82.0" text="Hour" visible="false" />
-        <Label fx:id="Minute_Label" layoutX="509.0" layoutY="119.0" prefHeight="17.0" prefWidth="91.0" text="Minute" visible="false" />
-        <Button layoutX="603.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#Logout" prefHeight="39.0" prefWidth="73.0" text="Logout" />
+        <Label fx:id="Hour_label" layoutX="406.0" layoutY="119.0" prefHeight="17.0" prefWidth="82.0" text="Hour"
+               visible="false"/>
+        <Label fx:id="Minute_Label" layoutX="509.0" layoutY="119.0" prefHeight="17.0" prefWidth="91.0" text="Minute"
+               visible="false"/>
+        <Button layoutX="603.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#Logout" prefHeight="39.0"
+                prefWidth="73.0" text="Logout"/>
     </children>
 </AnchorPane>

@@ -45,6 +45,7 @@ public class AdminPanel extends CustomController {
         public void Success(String[] complaints) {
             Complaintslist.addAll(complaints);
         }
+
         public void fail(String error) {
             DisplayError(error);
         }

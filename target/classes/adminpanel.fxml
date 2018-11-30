@@ -8,43 +8,49 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="593.0" prefWidth="784.0"
-            xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Panels.AdminPanel" stylesheets="AdminStyle.css">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="593.0"
+            prefWidth="784.0" xmlns="http://javafx.com/javafx/8.0.121"
+            fx:controller="Panels.AdminPanel" stylesheets="AdminStyle.css">
     <children>
         <Label alignment="CENTER" layoutY="40.0" prefHeight="24.0" prefWidth="252.0" text="All Appointments">
             <font>
-                <Font size="19.0" />
+                <Font size="19.0"/>
             </font>
         </Label>
-        <TableView fx:id="my_appointments" layoutX="14.0" layoutY="69.0" prefHeight="200.0" prefWidth="200.0" />
-        <Label alignment="CENTER" layoutX="35.0" layoutY="298.0" prefHeight="16.0" prefWidth="123.0" text="Details" />
-        <Label fx:id="details_name" layoutX="27.0" layoutY="374.0" prefHeight="17.0" prefWidth="123.0" text="name" />
-        <Label fx:id="details_email" layoutX="31.0" layoutY="340.0" prefHeight="17.0" prefWidth="149.0" text="email" />
-        <Label fx:id="details_rating" layoutX="12.0" layoutY="424.0" prefHeight="17.0" prefWidth="91.0" text="Rating" visible="false" />
+        <TableView fx:id="my_appointments" layoutX="14.0" layoutY="69.0" prefHeight="200.0" prefWidth="200.0"/>
+        <Label alignment="CENTER" layoutX="35.0" layoutY="298.0" prefHeight="16.0" prefWidth="123.0" text="Details"/>
+        <Label fx:id="details_name" layoutX="27.0" layoutY="374.0" prefHeight="17.0" prefWidth="123.0" text="name"/>
+        <Label fx:id="details_email" layoutX="31.0" layoutY="340.0" prefHeight="17.0" prefWidth="149.0" text="email"/>
+        <Label fx:id="details_rating" layoutX="12.0" layoutY="424.0" prefHeight="17.0" prefWidth="91.0" text="Rating"
+               visible="false"/>
         <Label alignment="CENTER" layoutX="-2.0" layoutY="14.0" prefHeight="16.0" prefWidth="678.0" text="Admin Panel">
             <font>
-                <Font size="22.0" />
+                <Font size="22.0"/>
             </font>
         </Label>
         <Label alignment="CENTER" layoutX="409.0" layoutY="68.0" prefHeight="17.0" prefWidth="228.0" text="Add Admin">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
         </Label>
-        <TextField fx:id="add_admin_email" layoutX="409.0" layoutY="94.0" prefHeight="25.0" prefWidth="228.0" promptText="Email" />
-        <TextField fx:id="add_admin_password" layoutX="409.0" layoutY="135.0" prefHeight="25.0" prefWidth="228.0" promptText="Password" />
-        <Button fx:id="add_admin" layoutX="479.0" layoutY="169.0" mnemonicParsing="false" text="Create Admin" />
-        <Label alignment="CENTER" layoutX="276.0" layoutY="246.0" prefHeight="46.0" prefWidth="200.0" text="Barbers waiting Approval">
+        <TextField fx:id="add_admin_email" layoutX="409.0" layoutY="94.0" prefHeight="25.0" prefWidth="228.0"
+                   promptText="Email"/>
+        <TextField fx:id="add_admin_password" layoutX="409.0" layoutY="135.0" prefHeight="25.0" prefWidth="228.0"
+                   promptText="Password"/>
+        <Button fx:id="add_admin" layoutX="479.0" layoutY="169.0" mnemonicParsing="false" text="Create Admin"/>
+        <Label alignment="CENTER" layoutX="276.0" layoutY="246.0" prefHeight="46.0" prefWidth="200.0"
+               text="Barbers waiting Approval">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
         </Label>
-        <ListView fx:id="waiting" layoutX="276.0" layoutY="291.0" prefHeight="200.0" prefWidth="200.0" />
+        <ListView fx:id="waiting" layoutX="276.0" layoutY="291.0" prefHeight="200.0" prefWidth="200.0"/>
         <Label alignment="CENTER" layoutX="476.0" layoutY="246.0" prefHeight="46.0" prefWidth="200.0" text="Complaints">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
         </Label>
-        <ListView fx:id="Complaints" layoutX="476.0" layoutY="291.0" prefHeight="200.0" prefWidth="200.0" />
+        <ListView fx:id="Complaints" layoutX="476.0" layoutY="291.0" prefHeight="200.0" prefWidth="200.0"/>
     </children>
 </AnchorPane>

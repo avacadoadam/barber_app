@@ -1,4 +1,5 @@
 package Dataset;
+
 //A dataset to represent the object(Json) returned from the server
 public class ListBarber {
 
